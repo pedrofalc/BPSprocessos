@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @selection.name %>
+</p>
+
+<p>
+  <strong>Begin:</strong>
+  <%= @selection.begin %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @selection.end %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @selection.owner %>
+</p>
+
+<%= link_to 'Edit', edit_selection_path(@selection) %> |
+<%= link_to 'Back', selections_path %>
