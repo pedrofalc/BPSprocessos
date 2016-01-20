@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
-
+<h1>  -----  </h1>
+<h1>    </h1>
+<div class="container">
 <h1>Seleções Disponíveis</h1>
 
 <table>
 
 
   <tbody>
+   <h2 class="page-header">
+    Processos Seletivos mais recentes:
+                </h2>
     <% @selections.each do |selection| %>
 
 <!-- Divulgação de Processos tipo 1 -->
         <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">
-                    Processos Seletivos mais recentes:
-                </h2>
-            </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -22,18 +22,17 @@
                     </div>
                     <div class="panel-body">
                         
-                        <p><%= selection.begin %></td>
-                        <td><%= selection.end %></td>
-                        <td><%= selection.owner %></td>.</p>
+                        Início<p><%= selection.begin %><p>
+                        Fim<p><%= selection.end %><p>
+                       Id do dono <p><%= selection.owner %><p>
+                       </p>
                         <%= link_to 'Show',  selection ,class: "btn btn-default"%>
                          <%= link_to 'Edit',  edit_selection_path(selection) ,class: "btn btn-default"%>
                          <%= link_to 'Destroy',  selection, method: :delete, data: { confirm: 'Are you sure?' }  ,class: "btn btn-default"%>
-
-                        
-                    
                     </div>
                 </div>
             </div>
+          </div>
 
 
 
@@ -44,4 +43,10 @@
 
 <br>
 
-<%= link_to 'New Selection', new_selection_path %>
+<%= link_to 'New Selection', new_selection_path,class: "btn btn-default" %>
+</div>
+
+
+
+
+

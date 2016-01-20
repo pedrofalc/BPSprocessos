@@ -53,7 +53,7 @@ class SelectionsController < ApplicationController
       end
     end
     else
-        redirect_to selections_url,notice: 'SAIIIIIIIII.'
+        redirect_to selections_url, notice: 'Você não é proprietário desse processo!'
       end
 
   end
@@ -68,7 +68,7 @@ class SelectionsController < ApplicationController
       format.json { head :no_content }
     end
        else
-        redirect_to @selection
+        redirect_to selections_url, notice: 'Você não é proprietário desse processo!'
       end
   end
 

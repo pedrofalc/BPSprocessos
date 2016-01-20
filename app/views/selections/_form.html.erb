@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="form-group">
+    <%= f.label :name, class: "sr-only"%><br>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :begin %><br>
@@ -24,6 +24,6 @@
     <%= f.date_select :end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar", class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>
