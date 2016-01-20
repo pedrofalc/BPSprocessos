@@ -8,9 +8,7 @@
 
 <body>
 
-                         
-
-    <!-- Navigation -->
+ <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,34 +19,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+              
                 <%=link_to "BPS Processos ", selections_path, class: "navbar-brand"  %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                
                 <% if current_teacher.present? %>
-                    <li>
-                       Logado como <%= current_teacher.id%>,  no email <%= current_teacher.email%>
-                    </li>
-                    <li>
-                      <%= link_to("Sair", destroy_teacher_session_path, :method => :delete) %>
-                    </li>
+                   <ul class="nav navbar-nav navbar-right" >
+                   
+                    <li ><strong><h5><font color="White">  Logado como <%= current_teacher.id%>,  no email <%= current_teacher.email%><h5></font></strong></li>
+
+                    <li> <%= link_to("Sair", destroy_teacher_session_path, :method => :delete) %></li>
+
+                    </ul>
                 <%else%> 
+                  
+                  <ul class="nav navbar-nav navbar-right">
                   <li>
+                  
                     <%= link_to "Cadastrar", new_teacher_registration_path %>
                   </li>
                   <li>
-                    <%= link_to "Entrar", new_teacher_session_path %>/                
+                    <%= link_to "Entrar", new_teacher_session_path %>                
                   </li>
-                <% end %> 
                 </ul>
+                <% end %> 
+                
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
+
   
 <div class="container">
+
 <%= yield %>
 </div>
 

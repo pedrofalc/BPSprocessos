@@ -40,14 +40,6 @@ ActiveRecord::Schema.define(version: 20160120032431) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "students_and_selections", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "selection_id"
-  end
-
-  add_index "students_and_selections", ["selection_id"], name: "index_students_and_selections_on_selection_id"
-  add_index "students_and_selections", ["student_id"], name: "index_students_and_selections_on_student_id"
-
   create_table "students_selections", force: :cascade do |t|
     t.integer "student_id"
     t.integer "selection_id"
@@ -73,14 +65,6 @@ ActiveRecord::Schema.define(version: 20160120032431) do
 
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
-
-  create_table "teachers_and_selections", force: :cascade do |t|
-    t.integer "teacher_id"
-    t.integer "selection_id"
-  end
-
-  add_index "teachers_and_selections", ["selection_id"], name: "index_teachers_and_selections_on_selection_id"
-  add_index "teachers_and_selections", ["teacher_id"], name: "index_teachers_and_selections_on_teacher_id"
 
   create_table "teachers_selections", force: :cascade do |t|
   end
