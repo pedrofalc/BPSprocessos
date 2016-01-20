@@ -25,7 +25,11 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
-
+    #bras
+    @selection = Selection.find(params[:sid])
+    @selection.students << @student
+    @selection.save!
+    #bras
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }

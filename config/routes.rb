@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :teachers
+  get 'selections/:sid/students/new' => 'students#new', as: 'inscrever'
+  post 'selections/:sid/students' => 'students#create'
+
   resources :students
   resources :selections
   # The priority is based upon order of creation: first created -> highest priority.
