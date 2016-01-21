@@ -28,7 +28,7 @@
                 <% if current_teacher.present? %>
                    <ul class="nav navbar-nav navbar-right" >
                    
-                    <li ><strong><h5><font color="White">  Logado como <%= current_teacher.id%>,  no email <%= current_teacher.email%><h5></font></strong></li>
+                    <li ><strong><h5><font color="White" face="Oswald">  Logado como <%= current_teacher.id%>,  no email <%= current_teacher.email%><h5></font></strong></li>
 
                     <li> <%= link_to("Sair", destroy_teacher_session_path, :method => :delete) %></li>
 

@@ -1,7 +1,5 @@
-<div class="container">
-<div class="container">
-<h1>  -----  </h1>
-<h1>    </h1>
+<div  STYLE="position:absolute; TOP:100px; LEFT:200px; WIDTH:800px; HEIGHT:10px"  >
+
 <h1>Editing Selection</h1>
 
 <%= form_for(@selection) do |f| %>
@@ -21,11 +19,11 @@
     <%= f.label :name, class: "sr-only"%><br>
     <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field" align="center">
     <%= f.label :begin %><br>
     <%= f.date_select :begin %>
   </div>
-  <div class="field">
+  <div class="field" align="center">
     <%= f.label :end %><br>
     <%= f.date_select :end %>
   </div>
