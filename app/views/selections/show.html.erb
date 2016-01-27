@@ -1,23 +1,32 @@
-<div  STYLE="position:absolute; TOP:150px; LEFT:400px; WIDTH:1000px; HEIGHT:10px"  >
+<div  STYLE="position:absolute; TOP:150px; LEFT:250px; WIDTH:1000px; HEIGHT:10px"  >
 
-<p id="notice"><%= notice %></p>
 
- <div class="col-md-4">
+
+
+ <div class="col-md-9">
+
+<h2 align="center"><FONT color="Green"><%= notice %> </FONT> <h2>
+
 <div class="panel-body">
                <div class="panel panel-primary" align="center">
                     <div class="panel-heading">
-                        <h2><i class="fa fa-fw fa-check"></i> <%= @selection.name %></h2>
+                        <h2 align="center"><i class="fa fa-fw fa-check"></i> <%= @selection.name %></h2>
                     </div>       
-                    <div class="alert alert-info">
+                    
         <div class="row" align="center">   
-        <p>Início<%= @selection.begin %></p>
-                        <p>Fim<%= @selection.end %></p>
-                         <p>Id do dono :<%= @selection.owner %></p>
+        <h3><font face="Times New Roman" >Início: <%= @selection.begin %> <i class="fa fa-calendar fa-2"></i><h3>
+                       <h3>Final: <%= @selection.end %> <i class="fa fa-calendar fa-2"></i><h3>
+                <h3> Id do Professor: <%= @selection.owner %> <i class="fa fa-tag fa-2"></i>
+                       <h3>
+
+
+
+
                          <%= link_to 'Edit', edit_selection_path(@selection),class: "btn btn-default" %> 
 <%= link_to 'Back', selections_path, class: "btn btn-default" %>
             
                    </div>	
-</div>
+
 </div>
 </div>
 </div>

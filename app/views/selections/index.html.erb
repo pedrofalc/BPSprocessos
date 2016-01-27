@@ -1,23 +1,31 @@
-<div  STYLE="position:absolute; TOP:70px; LEFT:100px; WIDTH:1000px; HEIGHT:10px"  >
-<p id="notice"><%= notice %></p>
+<div >
+<div class="jumbotron" ><div class="container" >
+
+<h1 align="center" >
+<FONT FACE="Lobster" color="white"> Seja bem vindo ao BPSHÉ</FONT> <h1>
 
 
-<h1 align="center" face="Arial" ><FONT FACE="Lobster"> Crie um novo processo!</FONT> <h1>
+<h1 align="center" ><i class="fa fa-list fa-5"></i>
+<FONT FACE="Lobster" color="white"> Crie um novo processo!</FONT> <h1>
+<h1 align="center"><%= link_to 'Crie um novo Processo ', new_selection_path,class: "btn btn-success active"  %>
 
-<h1 align="center"><%= link_to 'New Selection', new_selection_path,class: "btn btn-success active"  %>
+</div>
+</div></div>
+
+<h2 align="center"><FONT color="black"><%= notice %> </FONT> <h2>
+      
 
 
 
-
-<h1>Seleções Disponíveis</h1>
+<h1 align="center">Seleções Disponíveis :</h1>
 
 
 
 <table>
 
   <tbody>
-   <h2 class="page-header">
-    Processos Seletivos mais recentes:
+   <h2 class="page-header" align="center">
+    
                 </h2>
     <% @selections.each do |selection| %>
 
@@ -25,27 +33,32 @@
       
 
            
+
+
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> <%= selection.name %></h4>
+                        <h4><i class="fa fa-users fa-2"></i> <%= selection.name %></h4>
                     </div>
                     <div class="panel-body">
                      
         <div class="row" align="center">   
-                        Início<p><%= selection.begin %><p>
-                        Fim<p><%= selection.end %><p>
-                        Id do dono : <p><%= selection.owner %><p>
-                       </p>
+              <p>Início: <%= selection.begin %> <i class="fa fa-calendar fa-2"></i><p>
+                        <p>Final: <%= selection.end %> <i class="fa fa-calendar fa-2"></i><p>
+                        
+
+                         <p> Id do Professor: <%= selection.owner %> <i class="fa fa-tag fa-2"></i>
+                       <p>
                    
 </div>
                         <%= link_to 'Show',  selection ,class: "btn btn-default"%>
                          <%= link_to 'Edit',  edit_selection_path(selection) ,class: "btn btn-default"%>
                          <%= link_to 'Destroy',  selection, method: :delete, data: { confirm: 'Are you sure?' }  ,class: "btn btn-default"%>
+                         <%= link_to 'Edital', class: "btn btn-default"%>
                     </div>
                 </div>
             </div>
-          
+
 
 
 
