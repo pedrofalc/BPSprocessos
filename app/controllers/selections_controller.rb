@@ -7,6 +7,9 @@ class SelectionsController < ApplicationController
   def index
     @selections = Selection.all
   end
+  def home
+    @selections=Selection.all
+  end
 
   # GET /selections/1
   # GET /selections/1.json
@@ -30,7 +33,7 @@ class SelectionsController < ApplicationController
 
     respond_to do |format|
       if @selection.save
-        format.html { redirect_to @selection, notice: 'Selection was successfully created.' }
+        format.html { redirect_to selections_path , notice: 'Selection was successfully created.' }
         format.json { render :show, status: :created, location: @selection }
       else
         format.html { render :new }
@@ -45,7 +48,7 @@ class SelectionsController < ApplicationController
       if @selection.owner == current_teacher.id
     respond_to do |format|
       if @selection.update(selection_params)
-        format.html { redirect_to @selection, notice: 'Selection was successfully updated.' }
+        format.html { redirect_to selections_path, notice: 'Selection was successfully updated.' }
         format.json { render :show, status: :ok, location: @selection }
       else
         format.html { render :edit }
@@ -64,7 +67,7 @@ class SelectionsController < ApplicationController
     if @selection.owner == current_teacher.id
     @selection.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Selection was successfully destroyed.' }
+      format.html { redirect_to selections_path, notice: 'Selection was successfully destroyed.' }
       format.json { head :no_content }
     end
        else
@@ -80,6 +83,6 @@ class SelectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def selection_params
-      params.require(:selection).permit(:name, :begin, :end)
+      params.require(:selection).permit(:name,:description,:begin, :end )
     end
 end

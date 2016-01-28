@@ -20,18 +20,23 @@
                     <span class="icon-bar"></span>
                 </button>
               
-                   <%=link_to "BPSHÉ Processos ", selections_path, class: "navbar-brand"  %>
+                   <%=link_to "BPSHÉ Processos ", root_path, class: "navbar-brand"  %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 
                 <% if current_teacher.present? %>
+                   
                    <ul class="nav navbar-nav navbar-right" >
                    
                     <li ><strong><h5><font color="White" face="Oswald">  Logado como <%= current_teacher.id%>,  no email <%= current_teacher.email%><h5></font></strong></li>
 
+                    <li> <strong><h5><font color="White" face="Oswald"> <%=link_to "-->(Editar Seleções)", selections_path %><h5></font></strong>
+                     </li>
+
                     <li> <%= link_to("Sair", destroy_teacher_session_path, :method => :delete) %></li>
 
+                   
                     </ul>
                 <%else%> 
                   

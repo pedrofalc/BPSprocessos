@@ -1,0 +1,71 @@
+<!--home -->
+<div >
+<div class="jumbotron" ><div class="container" >
+
+<h1 align="center" >
+<FONT FACE="Lobster" color="#2F4F4F"> Seja bem vindo ao BPSHÉ</FONT> <h1>
+
+
+
+</div>
+</div></div>
+
+<h2 align="center"><FONT color="black"><%= notice %> </FONT> <h2>
+      
+
+
+
+<h1 align="center">Seleções Disponíveis :</h1>
+
+
+
+<table>
+
+  <tbody>
+   <h2 class="page-header" align="center">
+    
+                </h2>
+    <% @selections.each do |selection| %>
+
+<!-- Divulgação de Processos tipo 1 -->
+      
+
+           
+
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p><i class="fa fa-users fa-2"></i> <%= selection.name %> (Final: <%= selection.end %>) 
+                         </p>
+                    </div>
+                    <div class="panel-body">
+                     
+        <div class="row" align="center">   
+              
+                       
+                        <%= selection.description %>
+
+                     <!--    <p> Id do Professor: <%= selection.owner %> <i class="fa fa-tag fa-2"></i>-->
+                       <p>
+                         <%= link_to 'Inscreva-se',  root_path ,class: "btn btn-default"%>
+                         <%= link_to 'Edital',   root_path ,class: "btn btn-default"%>
+                   
+</div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+      
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>
+
