@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128000054) do
+ActiveRecord::Schema.define(version: 20160128023055) do
 
   create_table "selections", force: :cascade do |t|
     t.string   "name"
-    t.date     "begin"
     t.date     "end"
     t.integer  "owner"
     t.datetime "created_at",  null: false

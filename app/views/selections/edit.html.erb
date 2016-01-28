@@ -19,10 +19,13 @@
     <%= f.label :name, class: "sr-only"%><br>
     <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div class="field" align="center">
-    <%= f.label :begin %><br>
-    <%= f.date_select :begin %>
+<div class="form-group">
+  
+   <%= f.text_area  :description, class: "sr-only" %><br>
+<%= f.text_area :description, cols:20,  rows:05 ,class: "form-control" , placeholder: "Um pouco mais sobre seu processo seu processo" %>
   </div>
+  
+  
   <div class="field" align="center">
     <%= f.label :end %><br>
     <%= f.date_select :end %>
