@@ -1,10 +1,10 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_selection
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = @selection.students
   end
 
   # GET /students/1
@@ -14,29 +14,26 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    @student = @selection.students.new
   end
 
   # GET /students/1/edit
   def edit
+  	@student = @selection.students.find(:id)
   end
 
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
-    #bras
-    @selection = Selection.find(params[:sid])
-    @selection.students << @student
-    @selection.save!
-    #bras
+    
+   
+  	@student = @selection.students.new(student_params)  
+  
     respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render :show, status: :created, location: @student }
+      if  @selection.save
+        format.html { redirect_to root_path, notice: 'Inscrição Realizada com sucesso!' }
       else
         format.html { render :new }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -67,8 +64,8 @@ class StudentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_student
-      @student = Student.find(params[:id])
+    def set_selection
+      @selection = Selection.find(params[:selection_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

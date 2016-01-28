@@ -18,9 +18,14 @@
                        <h3>Final: <%= @selection.end %> <i class="fa fa-calendar fa-2"></i><h3>
                 <h3> Id do Professor: <%= @selection.owner %> <i class="fa fa-tag fa-2"></i>
                        <h3>
+                       Estudantes:
+                            <% @students.each_with_index do |student, index| %>
 
 
+                       <h3> <%= index+1%>  -Nome: <%= student.name %> Email: <%= student.email %><h3>
 
+
+                             <% end %>
 
                          <%= link_to 'Edit', edit_selection_path(@selection),class: "btn btn-default" %> 
 <%= link_to 'Back', selections_path, class: "btn btn-default" %>

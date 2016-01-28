@@ -29,10 +29,6 @@
 
 <!-- Divulgação de Processos tipo 1 -->
       
-
-           
-
-
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -48,7 +44,7 @@
 
                      <!--    <p> Id do Professor: <%= selection.owner %> <i class="fa fa-tag fa-2"></i>-->
                        <p>
-                         <%= link_to 'Inscreva-se',  root_path ,class: "btn btn-default"%>
+                         <%= link_to 'Inscreva-se',  "/selections/#{selection.id}/students/new" ,class: "btn btn-default"%>
                          <%= link_to 'Edital',   root_path ,class: "btn btn-default"%>
                    
 </div>

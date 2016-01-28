@@ -14,6 +14,7 @@ class SelectionsController < ApplicationController
   # GET /selections/1
   # GET /selections/1.json
   def show
+    @students = @selection.students
   end
 
   # GET /selections/new
@@ -83,6 +84,6 @@ class SelectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def selection_params
-      params.require(:selection).permit(:name,:description, :end )
+      params.require(:selection).permit(:name,:description,:end )
     end
 end
