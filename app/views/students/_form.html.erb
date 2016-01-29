@@ -1,6 +1,16 @@
 
 <%= form_for [@selection,@student] do |f| %>
+<% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this selection from being saved:</h2>
 
+    <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 
 <div class="form-group">
@@ -13,14 +23,14 @@
     <%= f.text_field :email, class: "form-control" ,placeholder: "Email"%>
   </div>
 
-  <br>
+
 
 <div class="fileUpload btn btn-lg btn-primary btn-block">
   <span>Curriculo</span>
     <%= f.file_field :resume, class: "upload", onchange: "resume(this)"%>
   <i id="resume_i" class="fa fa-cloud-upload"></i>
 </div>
-<br>
+
 
 
 <div class="fileUpload btn btn-lg btn-primary btn-block tooltipped" data-position="right" data-delay="50" data-tooltip="adicione seu histórico">

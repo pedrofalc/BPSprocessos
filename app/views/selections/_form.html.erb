@@ -15,12 +15,18 @@
     <%= f.label :name, class: "sr-only", cols: 60, rows: 100%><br>
     <%= f.text_field :name, class: "form-control" ,placeholder: "Escreva aqui o nome do processo!"%>
   </div>
-  
+
 
   <div class="form-group">
-  
+
    <%= f.text_area  :description, class: "sr-only" %><br>
 <%= f.text_area :description, cols:20,  rows:05 ,class: "form-control" , placeholder: "Um pouco mais sobre seu processo seu processo" %>
+  </div>
+
+  <div class="fileUpload btn btn-lg btn-primary btn-block tooltipped" data-position="right" data-delay="50" data-tooltip="adicione o edital">
+    <span>Edital</span>
+      <%= f.file_field :notice, class: "upload", onchange: "resume(this)" %>
+    <i id="resume_i" class="fa fa-cloud-upload"></i>
   </div>
 
 
