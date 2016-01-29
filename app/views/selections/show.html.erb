@@ -11,26 +11,27 @@
                <div class="panel panel-primary" align="center">
                     <div class="panel-heading">
                         <h2 align="center"><i class="fa fa-fw fa-check"></i> <%= @selection.name %></h2>
-                    </div>       
-                    
-        <div class="row" align="center">   
-       
+                    </div>
+
+        <div class="row" align="center">
+
                        <h3>Final: <%= @selection.end %> <i class="fa fa-calendar fa-2"></i><h3>
                 <h3> Id do Professor: <%= @selection.owner %> <i class="fa fa-tag fa-2"></i>
                        <h3>
                        Estudantes:
                             <% @students.each_with_index do |student, index| %>
 
-
-                       <h3> <%= index+1%>  -Nome: <%= student.name %> Email: <%= student.email %><h3>
+                       <h3> <%= index+1%>  -Nome: <%= student.name %> Email: <%= student.email %>
+                         <a class="btn btn-primary btn-lg" href="<%= student.history_url%>">Histórico</a>
+                         <a class="btn btn-primary btn-lg"  href="<%= student.resume_url %>">Currículo</a> <h3>
 
 
                              <% end %>
 
-                         <%= link_to 'Edit', edit_selection_path(@selection),class: "btn btn-default" %> 
+                         <%= link_to 'Edit', edit_selection_path(@selection),class: "btn btn-default" %>
 <%= link_to 'Back', selections_path, class: "btn btn-default" %>
-            
-                   </div>	
+
+                   </div>
 
 </div>
 </div>
