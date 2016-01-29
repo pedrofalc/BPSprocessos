@@ -1,7 +1,7 @@
 
 <%= form_for [@selection,@student] do |f| %>
 <% if @student.errors.any? %>
-  <div id="error_explanation" STYLE="position:absolute; TOP:90px; LEFT:530px; WIDTH:800px; HEIGHT:10px" >
+  <div id="error_explanation" STYLE="position:absolute; TOP:-100px; LEFT:280px; WIDTH:450px; HEIGHT:10px" >
     <h2><%= pluralize(@student.errors.count, "error") %> prohibited this selection from being saved:</h2>
 
     <ul>
