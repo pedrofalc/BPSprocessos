@@ -25,10 +25,10 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    
-   
-  	@student = @selection.students.new(student_params)  
-  
+
+
+  	@student = @selection.students.new(student_params)
+
     respond_to do |format|
       if  @selection.save
         format.html { redirect_to root_path, notice: 'Inscrição Realizada com sucesso!' }
@@ -70,6 +70,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :email)
+params.require(:student).permit(:name, :email,:resume, :history)
     end
 end

@@ -1,8 +1,8 @@
 
 <%= form_for [@selection,@student] do |f| %>
-  
 
- 
+
+
 <div class="form-group">
     <%= f.label :name, class: "sr-only", cols: 60, rows: 100%><br>
     <%= f.text_field :name, class: "form-control" ,placeholder: "Seu nome completo"%>
@@ -13,12 +13,25 @@
     <%= f.text_field :email, class: "form-control" ,placeholder: "Email"%>
   </div>
 
+  <br>
+
+<div class="fileUpload btn btn-lg btn-primary btn-block">
+  <span>Curriculo</span>
+    <%= f.file_field :resume, class: "upload", onchange: "resume(this)"%>
+  <i id="resume_i" class="fa fa-cloud-upload"></i>
+</div>
+<br>
+
+
+<div class="fileUpload btn btn-lg btn-primary btn-block tooltipped" data-position="right" data-delay="50" data-tooltip="adicione seu histórico">
+  <span>Histórico</span>
+    <%= f.file_field :history, class: "upload", onchange: "history(this)" %>
+  <i id="history_i" class="fa fa-cloud-upload"></i>
+</div>
+<br>
+
 <div class="actions">
     <%= f.submit "Inscreva-se!", class: "btn btn-lg btn-primary btn-block" %>
   </div>
-  
+
 <% end %>
-
-
-
-

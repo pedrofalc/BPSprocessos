@@ -23,7 +23,7 @@
 </div></div>
 
 <h2 align="center"><FONT color="black"><%= notice %> </FONT> <h2>
-      
+
 
 
 
@@ -35,28 +35,28 @@
 
   <tbody>
    <h2 class="page-header" align="center">
-    
+
                 </h2>
     <% @selections.each do |selection| %>
 
 <!-- Divulgação de Processos tipo 1 -->
-      
+
             <% if current_teacher.present? %>
-                      
+
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-users fa-2"></i> <%= selection.name %></h4>
                     </div>
                     <div class="panel-body">
-                     
-                        <div class="row" align="center">   
+
+                        <div class="row" align="center">
                             <p>Final: <%= selection.end %> <i class="fa fa-calendar fa-2"></i><p>
-                        
+
 
                          <p> Email do professor responsável: <%= Teacher.find(selection.owner).email %> <i class="fa fa-tag fa-2"></i>
                        <p>
-                   
+
                              </div>
                          <% if current_teacher.id == selection.owner %>
 
@@ -67,31 +67,31 @@
                              <%= link_to 'Show',  selection ,class: "btn btn-default"%>
                             <%end%>
 
-                        
+
                     </div>
                 </div>
             </div>
 
 
-                <%else%>    
+                <%else%>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p><i class="fa fa-users fa-2"></i> <%= selection.name %> (Final: <%= selection.end %>) 
+                        <p><i class="fa fa-users fa-2"></i> <%= selection.name %> (Final: <%= selection.end %>)
                          </p>
                     </div>
                     <div class="panel-body">
-                     
-        <div class="row" align="center" >   
-              
-                       
+
+        <div class="row" align="center" >
+
+
                         <%= selection.description %>
 
                      <!--    <p> Id do Professor: <%= selection.owner %> <i class="fa fa-tag fa-2"></i>-->
                        <p>
                          <%= link_to 'Inscreva-se',  "/selections/#{selection.id}/students/new" ,class: "btn btn-default"%>
                          <%= link_to 'Edital',   root_path ,class: "btn btn-default"%>
-                   
+
 </div>
 
                     </div>
@@ -99,7 +99,7 @@
             </div>
 
 
-                <% end %>  
+                <% end %>
     <% end %>
   </tbody>
 </table>
@@ -107,8 +107,3 @@
 <br>
 
 </div>
-
-
-
-
-
