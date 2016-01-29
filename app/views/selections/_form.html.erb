@@ -1,6 +1,7 @@
 <%= form_for(@selection) do |f| %>
   <% if @selection.errors.any? %>
     <div id="error_explanation">
+    <div class="field" STYLE="position:float; TOP:200px; LEFT:350px; WIDTH:420px; HEIGHT:10px" >
       <h2><%= pluralize(@selection.errors.count, "error") %> prohibited this selection from being saved:</h2>
 
       <ul>
@@ -8,6 +9,7 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+    </div>
     </div>
   <% end %>
 
@@ -22,20 +24,19 @@
    <%= f.text_area  :description, class: "sr-only" %><br>
 <%= f.text_area :description, cols:20,  rows:05 ,class: "form-control" , placeholder: "Um pouco mais sobre seu processo seu processo" %>
   </div>
-
+<div STYLE="position:absolute;  LEFT:300px; WIDTH:420px; HEIGHT:10px" >
   <div class="fileUpload btn btn-lg btn-primary btn-block tooltipped" data-position="right" data-delay="50" data-tooltip="adicione o edital">
     <span>Edital</span>
       <%= f.file_field :notice, class: "upload", onchange: "resume(this)" %>
     <i id="resume_i" class="fa fa-cloud-upload"></i>
   </div>
+</div>
 
-
-
-  <div class="field">
+  <div class="field" STYLE="position:absolute; TOP:400px; LEFT:350px; WIDTH:420px; HEIGHT:10px" >
     <%= f.label :end %><br>
     <%= f.date_select :end %>
   </div>
-  <div class="actions">
+  <div class="actions" STYLE="position:absolute; TOP:500px; LEFT:150px; WIDTH:800px; HEIGHT:10px" >
     <%= f.submit "Criar", class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>
