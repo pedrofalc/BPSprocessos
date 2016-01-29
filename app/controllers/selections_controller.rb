@@ -31,7 +31,7 @@ class SelectionsController < ApplicationController
   def create
     @selection = Selection.new(selection_params)
     @selection.owner = current_teacher.id
-
+    
     respond_to do |format|
       if @selection.save
         format.html { redirect_to selections_path , notice: 'Selection was successfully created.' }

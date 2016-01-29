@@ -54,7 +54,7 @@
                             <p>Final: <%= selection.end %> <i class="fa fa-calendar fa-2"></i><p>
                         
 
-                         <p> Email do professor responsável: <%= current_teacher.email %> <i class="fa fa-tag fa-2"></i>
+                         <p> Email do professor responsável: <%= Teacher.find(selection.owner).email %> <i class="fa fa-tag fa-2"></i>
                        <p>
                    
                              </div>
