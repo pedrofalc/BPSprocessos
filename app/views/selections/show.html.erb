@@ -26,8 +26,8 @@
   <thead>
     <tr>
       <th WIDTH=100 height=50  >Index</th>
-      <th WIDTH=200 height=50 >Estudantes</th>
-      <th WIDTH=100>Email</th>
+      <th  WIDTH=200 height=50 colspan=5 >Estudantes</th>
+      <th WIDTH=200 rowspan=5>Email</th>
       <th WIDTH=150>Histórico</th>
       <th WIDTH=150>Currículo</th>
     </tr>
@@ -37,8 +37,8 @@
     <% @students.each_with_index do |student,index| %>
       <tr>
         <td WIDTH=100 height=50 ><%=index+1%></td>
-        <td  WIDTH=200 height=50  ><%= student.name %><br/></td>
-        <td WIDTH=100><%= student.email %></td>
+        <td  WIDTH=200 height=50 ><%= student.name%><br></td>
+        <td WIDTH=200 ><%= student.email %></td>
         <td WIDTH=150>  <a class="btn btn-primary btn-lg" href="<%= student.history_url%>">Histórico</a></td>
         <td WIDTH=150><a class="btn btn-primary btn-lg"  href="<%= student.resume_url %>">Currículo</a></td>
       </tr>
