@@ -60,6 +60,7 @@
                          <%= link_to 'Show', selection ,class: "btn btn-default"%>
                          <%= link_to 'Edit', edit_selection_path(selection) ,class: "btn btn-default"%>
                          <%= link_to 'Destroy', selection, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-default"%>
+                          <%= link_to 'evaluation', selection ,class: "btn btn-default"%>
                          <%else%>
                              <%= link_to 'Show', selection ,class: "btn btn-default"%>
                             <%end%>
@@ -71,6 +72,11 @@
 
 
                 <%else%>
+
+
+
+                <%if selection.end>DateTime.now.to_date%>
+               
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -86,8 +92,11 @@
 
                      <!-- <p> Id do Professor: <%= selection.owner %> <i class="fa fa-tag fa-2"></i>-->
                        <p>
-                         <%= link_to 'Inscreva-se', "/selections/#{selection.id}/students/new" ,class: "btn btn-info"%>
-                         <a class="btn btn-info" href="<%= selection.notice_url%>">Edital</a>
+                         <%= link_to 'Inscreva-se', "/selections/#{selection.id}/students/new" ,class: "btn btn-default"%>
+                         
+                         <a class="btn btn-default" href="<%= selection.notice_url%>">Edital</a>
+                         <%end%>    
+
 
 </div>
 

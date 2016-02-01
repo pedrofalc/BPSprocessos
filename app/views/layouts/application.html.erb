@@ -22,8 +22,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-              
-                   <%=link_to "BPS Processos ", root_path, class: "navbar-brand"  %>
+                 
+
+
+                 <% if current_teacher.present? %>
+                  
+                   <%=image_tag  '/l2.png'%> 
+
+                    <%=link_to "BPS Processos ", root_path, class: "navbar-brand"  %>
+
+                    <%else%>
+                    <%=image_tag  '/img.png'%> 
+                <%=link_to "BPS Processos ", root_path, class: "navbar-brand"  %>
+                    <%end%>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -7,6 +7,7 @@ class SelectionsController < ApplicationController
   def index
     @selections = Selection.all
   end
+  
   def home
     @selections=Selection.all
   end
@@ -61,7 +62,7 @@ class SelectionsController < ApplicationController
       end
 
   end
-
+  
   # DELETE /selections/1
   # DELETE /selections/1.json
   def destroy

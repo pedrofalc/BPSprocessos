@@ -15,19 +15,20 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = @selection.students.new
-  end
+  end 
 
   # GET /students/1/edit
-  def edit
-  	@student = @selection.students.find(:id)
+  def edit      
+    @student = @selection.students.find(params[:id])
   end
 
-  # POST /students
+  def evaluation
+      @student=@selection.students.find(params[:id])
+  end
+   # POST /students
   # POST /students.json
   def create
-
-
-  	@student = @selection.students.new(student_params)
+    @student = @selection.students.new(student_params)
 
     respond_to do |format|
       if  @selection.save
@@ -41,9 +42,11 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1
   # PATCH/PUT /students/1.json
   def update
+    @student = @selection.students.find(params[:id])
+
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        format.html { redirect_to selection_path , notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
@@ -65,11 +68,12 @@ class StudentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_selection
-      @selection = Selection.find(params[:selection_id])
+      @selection=Selection.find(params[:selection_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-params.require(:student).permit(:name, :email,:resume, :history)
+  params.require(:student).permit(:name,:email,:resume,:history,:nota1, :nota2, :nota3)
     end
+ 
 end

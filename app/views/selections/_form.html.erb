@@ -1,6 +1,6 @@
 <%= form_for(@selection) do |f| %>
   <% if @selection.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" STYLE="position:absolute; TOP:-50px; LEFT:350px; WIDTH:420px; HEIGHT:10px" >
     <div class="field" STYLE="position:float; TOP:200px; LEFT:350px; WIDTH:420px; HEIGHT:10px" >
       <h2><%= pluralize(@selection.errors.count, "error") %> prohibited this selection from being saved:</h2>
 
@@ -36,7 +36,9 @@
     <%= f.label :end %><br>
     <%= f.date_select :end %>
   </div>
+
   <div class="actions" STYLE="position:absolute; TOP:500px; LEFT:150px; WIDTH:800px; HEIGHT:10px" >
     <%= f.submit "Criar", class: "btn btn-lg btn-primary btn-block" %>
   </div>
+  
 <% end %>

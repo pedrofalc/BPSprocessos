@@ -1,0 +1,37 @@
+<div  STYLE="position:absolute; TOP:100px; LEFT:200px; WIDTH:800px; HEIGHT:10px"  >
+
+<%= form_for [@selection,@student] do |f| %>
+<% if @student.errors.any? %>
+  <div id="error_explanation" STYLE="position:absolute; TOP:-100px; LEFT:280px; WIDTH:450px; HEIGHT:10px" >
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this selection from being saved:</h2>
+
+    <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  
+<div class="form-group" STYLE="position:absolute; TOP:40px; LEFT:30px; WIDTH:200px; HEIGHT:10px" >
+    <h4 align="center"><%= f.label :nota1 %><br /><h4>
+    <%= f.text_field :nota1, class: "form-control" ,placeholder: "nota1"%>
+  </div>
+
+  <div class="form-group" STYLE="position:absolute; TOP:40px; LEFT:340px; WIDTH:200px; HEIGHT:10px" >
+    <h4 align="center"><%= f.label :nota2 %><br /><h4>
+    <%= f.text_field :nota2, class: "form-control" ,placeholder: "nota2"%>
+  </div>
+  
+  <div class="form-group" STYLE="position:absolute; TOP:40px; LEFT:630px; WIDTH:200px; HEIGHT:10px" >
+    <h4 align="center"><%= f.label :nota3 %><br /><h4>
+    <%= f.text_field :nota3, class: "form-control" ,placeholder: "nota3"%>
+  </div>
+
+
+<div  STYLE="position:absolute; TOP:330px; LEFT:30px; WIDTH:800px; HEIGHT:10px"  >
+    <%= f.submit "Avalie!", class: "btn btn-lg btn-primary btn-block" %>
+  </div>
+
+<% end %>

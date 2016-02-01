@@ -1,6 +1,25 @@
-<h1>Editing Student</h1>
+<%= form_for [@selection,@student] do |f| %>
+<% if @student.errors.any? %>
+  <div id="error_explanation" STYLE="position:absolute; TOP:-100px; LEFT:280px; WIDTH:450px; HEIGHT:10px" >
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this selection from being saved:</h2>
 
-<%= render 'form' %>
+    <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+  
+<div class="form-group" STYLE="position:absolute; TOP:70px; LEFT:130px; WIDTH:800px; HEIGHT:10px" >
+    <%= f.label :nota1, class: "sr-only", cols: 60, rows: 100%><br>
+    <%= f.text_field :nota1, class: "form-control" ,placeholder: "Seu nome completo"%>
+  </div>
+
+
+<div  STYLE="position:absolute; TOP:400px; LEFT:100px; WIDTH:800px; HEIGHT:10px"  >
+    <%= f.submit "Inscreva-se!", class: "btn btn-lg btn-primary btn-block" %>
+  </div>
+
+<% end %>

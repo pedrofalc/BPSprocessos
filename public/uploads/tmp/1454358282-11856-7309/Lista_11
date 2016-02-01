@@ -1,0 +1,91 @@
+﻿--1
+--select enome,salario
+--from eempresa.empregado
+--2
+--select enome,salario
+--from eempresa.empregado
+--where sexo='F'
+--3
+--select enome,salario
+--from eempresa.empregado
+--where sexo='F' and salario > 10000
+--4
+--select count(*)
+--from eempresa.empregado
+--5
+--select max(salario),min(salario),avg(salario)
+--from eempresa.empregado
+--6
+--select enome,salario
+--from eempresa.empregado,eempresa.departamento
+--where (empregado.cdep=departamento.codigo) and (dnome='Marketing')
+--7
+--select distinct cpf
+--from eempresa.empregado natural join eempresa.tarefa
+--8
+--(select cpf
+--from eempresa.empregado)
+--EXCEPT
+--(select distinct cpf
+--from eempresa.empregado natural join eempresa.tarefa
+--)
+--9 
+--select distinct enome
+--from eempresa.empregado natural join eempresa.tarefa
+--10
+--(select enome
+--from eempresa.empregado)
+--EXCEPT
+--(select distinct enome
+--from eempresa.empregado natural join eempresa.tarefa
+--)
+--11
+--select cpf
+--from eempresa.empregado natural join eempresa.tarefa
+--where horas > 30
+--12
+--select enome
+--from eempresa.empregado natural join eempresa.tarefa
+--where horas > 30
+--13
+--select dnome,enome
+--from eempresa.departamento,eempresa.empregado
+--where empregado.cpf=departamento.gerente
+--14
+--select cpf
+--from eempresa.empregado
+--where cpf in ( select empregado.cpf
+--		from eempresa.departamento,eempresa.empregado
+--		where dnome = 'Pesquisa' and codigo=cdep)
+--          or cpf in( select distinct empregado.chefe
+--		from eempresa.departamento,eempresa.empregado
+--		where dnome = 'Pesquisa' and codigo=cdep)
+--15
+--select distinct pnome,cidade
+--from  eempresa.projeto natural join eempresa.tarefa
+--where horas > 30
+--16
+--select enome,nasc
+--from eempresa.departamento,eempresa.empregado
+--where empregado.cpf=departamento.gerente
+--17
+--select enome,endereco
+--from eempresa.departamento,eempresa.empregado		
+--where dnome='Pesquisa' and codigo=cdep
+--18
+--select distinct pcodigo,dnome,enome
+--from eempresa.projeto,eempresa.departamento,eempresa.empregado
+--where projeto.cdep = departamento.codigo and  departamento.gerente=empregado.cpf and  projeto.pnome = 'Icapui'
+--19
+--select enome,sexo
+--from eempresa.departamento,eempresa.empregado
+--where empregado.cpf=departamento.gerente
+--20
+--(select enome,nasc
+--from eempresa.departamento,eempresa.empregado
+-- )
+--EXCEPT
+--(select enome,nasc
+--from eempresa.departamento,eempresa.empregado
+--where empregado.cpf=departamento.gerente)
+         

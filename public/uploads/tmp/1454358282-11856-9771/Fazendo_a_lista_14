@@ -1,0 +1,18 @@
+﻿set search_path=eempresa;
+--1
+--select d.dnome,avg(e.salario) as média,max(e.salario) as salariomax , min(e.salario) as saláriomin
+--from empregado e,departamento d
+--where cdep=codigo
+--group by dnome
+
+--2
+--select d.dnome, avg(e.salario) as med_salario
+--from empregado e, departamento d
+--where d.codigo = e.cdep
+--group by d.dnome
+--having avg(e.salario)>= all (   select avg(e.salario) as med_salario
+--				from departamento d, empregado e
+--				where d.codigo=e.cdep
+--				group by d.codigo
+--			     )
+--3
