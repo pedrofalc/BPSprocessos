@@ -1,4 +1,16 @@
+<% if @student.errors.any? %>
+  <div id="error_explanation" STYLE="position:absolute; TOP:-100px; LEFT:280px; WIDTH:450px; HEIGHT:10px" >
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this selection from being saved:</h2>
+
+    <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Name:</strong>

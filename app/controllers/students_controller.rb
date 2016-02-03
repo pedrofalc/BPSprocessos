@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
   before_action :set_selection
-
   # GET /students
   # GET /students.json
   def index
@@ -15,10 +14,10 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = @selection.students.new
-  end 
+  end
 
   # GET /students/1/edit
-  def edit      
+  def edit
     @student = @selection.students.find(params[:id])
   end
 
@@ -32,6 +31,8 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if  @selection.save
+        flash[:notice] = "Post successfully created"
+
         format.html { redirect_to root_path, notice: 'Inscrição Realizada com sucesso!' }
       else
         format.html { render :new }
@@ -46,10 +47,12 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to selection_path , notice: 'Student was successfully updated.' }
+        format.html { redirect_to root_path , notice: 'Student was successfully updated.' }
+        flash[:notice] = "Post successfully created"
+
         format.json { render :show, status: :ok, location: @student }
       else
-        format.html { render :edit }
+        format.html { render :evaluation }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
     end
@@ -72,8 +75,8 @@ class StudentsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def student_params
-  params.require(:student).permit(:name,:email,:resume,:history,:nota1, :nota2, :nota3)
+  params.require(:student).permit(:name,:email,:resume,:history, :nota1, :nota2, :nota3)
     end
- 
 end

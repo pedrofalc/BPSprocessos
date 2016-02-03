@@ -1,3 +1,4 @@
+
 <%= form_for [@selection,@student] do |f| %>
 <% if @student.errors.any? %>
   <div id="error_explanation" STYLE="position:absolute; TOP:-100px; LEFT:280px; WIDTH:450px; HEIGHT:10px" >
@@ -10,16 +11,10 @@
     </ul>
   </div>
 <% end %>
+<p id="notice"><%= notice %></p>
 
-  
-<div class="form-group" STYLE="position:absolute; TOP:70px; LEFT:130px; WIDTH:800px; HEIGHT:10px" >
-    <%= f.label :nota1, class: "sr-only", cols: 60, rows: 100%><br>
-    <%= f.text_field :nota1, class: "form-control" ,placeholder: "Seu nome completo"%>
-  </div>
-
-
-<div  STYLE="position:absolute; TOP:400px; LEFT:100px; WIDTH:800px; HEIGHT:10px"  >
-    <%= f.submit "Inscreva-se!", class: "btn btn-lg btn-primary btn-block" %>
-  </div>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 <% end %>

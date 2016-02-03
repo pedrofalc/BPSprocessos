@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :teachers
   #get 'selections/:sid/students/new' => 'students#new', as: 'inscrever'
-  
+
   get '/selections/:selection_id/students/:id/evaluation' => 'students#evaluation', as: 'evaluation'
 
 
