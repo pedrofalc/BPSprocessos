@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #get 'selections/:sid/students/new' => 'students#new', as: 'inscrever'
 
   get '/selections/:selection_id/students/:id/evaluation' => 'students#evaluation', as: 'evaluation'
-
+  get '/selections/:id/ranking' => 'selections#ranking', as: 'ranking'
 
 resources :selections do
   resources :students

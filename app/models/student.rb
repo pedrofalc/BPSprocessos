@@ -12,9 +12,9 @@ class Student < ActiveRecord::Base
 		:too_long => "Tamanho máximo de nome deve ser menor que 30"
 
 		#validates :nota1, :numericality => { :greater_than => 0, :less_than_or_equal_to => 10 }
-		validates_inclusion_of :nota1, in: 0..10, :message => "Campo deve  ser entre 0 e 10"
-		validates_inclusion_of :nota2, in: 0..10, :message => "Campo deve  ser entre 0 e 10"
-		validates_inclusion_of :nota3, in: 0..10, :message => "Campo deve  ser entre 0 e 10"
-
+		validates_inclusion_of :nota1, in: 0..10,  on: :update,:message => "Campo deve  ser entre 0 e 10"
+		validates_inclusion_of :nota2, in: 0..10,  on: :update,:message => "Campo deve  ser entre 0 e 10"
+		validates_inclusion_of :nota3, in: 0..10, on:  :update ,:message => "Campo deve  ser entre 0 e 10"
+		
 
 end

@@ -57,10 +57,10 @@
                              </div>
                          <% if current_teacher.id == selection.owner %>
 
-                         <%= link_to 'Show', selection ,class: "btn btn-default"%>
+                         <%= link_to 'Show', selection_path(selection) ,class: "btn btn-default"%>
                          <%= link_to 'Edit', edit_selection_path(selection) ,class: "btn btn-default"%>
                          <%= link_to 'Destroy', selection, method: :delete, data: { confirm: 'Are you sure?' } ,class: "btn btn-default"%>
-                          <%= link_to 'evaluation', selection ,class: "btn btn-default"%>
+                          <%= link_to 'Ranking', ranking_path(selection) ,class: "btn btn-default"%>
                          <%else%>
                              <%= link_to 'Show', selection ,class: "btn btn-default"%>
                             <%end%>

@@ -1,0 +1,68 @@
+<div  STYLE="position:absolute; TOP:150px; LEFT:250px; WIDTH:1000px; HEIGHT:10px"  >
+
+
+ <div class="col-md-9">
+
+<h2 align="center"><FONT color="Green"><%= notice %> </FONT> <h2>
+
+<div class="panel-body"  STYLE="position:absolute; TOP:-100px; LEFT:-200px; WIDTH:1200px; HEIGHT:10px">
+               <div class="panel panel-primary" align="center">
+                    <div class="panel-heading">
+                        <h2 align="center"><i class="fa fa-fw fa-check"></i> <%= @selection.name %></h2>
+                    </div>
+
+        <div class="row" align="center">
+
+
+
+                       <h4>Final: <%= @selection.end %> <i class="fa fa-calendar fa-2"></i><h4>
+                <h4> Id do Professor: <%= @selection.owner %> <i class="fa fa-tag fa-2"></i>
+                       <h4>
+
+          <div> 
+<table class="table table-inverse"  STYLE="WIDTH:800px; ">
+
+     <thead class="thead">
+      <th WIDTH=10 height=20  ><h4 align="center" ><strong>Colocação </strong></th>
+            <th WIDTH=200 height=50 ><h4 align="center" ><strong>NOME</strong>  <h4></th>
+
+     
+      <th WIDTH=100 height=50 ><h4 align="center" ><strong>Total</strong></th>
+ 
+      
+      </thead>
+  
+  <tbody>
+    <% @students.order("nota1+nota2+nota3 DESC").each_with_index do |student,i| %>
+
+   
+
+      <tr  class="info">
+                  <%if i<3 %>
+        <td align="center" ><%=i+1%>º</td>
+                <td WIDTH=200  align="center"><%= student.name%></td>
+        
+      
+        <td WIDTH=100 align="center"><%= student.nota1+student.nota2+student.nota3%></td>
+        
+        <%end%>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+</div>
+
+
+                             </div>
+
+                         <%= link_to 'Edit', edit_selection_path(@selection),class: "btn btn-default" %>
+<%= link_to 'Back', selections_path, class: "btn btn-default" %>
+
+                   </div>
+
+</div>
+</div>
+</div>
+</div>

@@ -1,5 +1,5 @@
-class SelectionsController < ApplicationController
-  before_action :set_selection, only: [:show, :edit, :update, :destroy]
+class SelectionsController < ApplicationController  
+  before_action :set_selection, only: [:show, :edit, :ranking,:update, :destroy]
   before_action :authenticate_teacher!, only:[:show, :create, :new , :edit, :update, :destroy]
 
   # GET /selections
@@ -21,6 +21,10 @@ class SelectionsController < ApplicationController
   # GET /selections/new
   def new
     @selection = Selection.new
+  end
+
+  def ranking
+     @students = @selection.students
   end
 
   # GET /selections/1/edit
